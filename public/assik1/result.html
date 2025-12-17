@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav_bar">
+        <div class="logo"><a href="../index.html">Main page</a></div>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="result.html">Результат</a></li>
+          <li><a href="#">О нас</a></li>
+        </ul>
+      </nav>
+      <div class="carousel">
+        <img src="img/img2.png" alt="" />
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="calcbox">
+        <div class="calc">
+          <div class="zagalovok">
+            <p>Result</p>
+          </div>
+          <div class="result-box">
+            <div class="bmi-counter">
+              <span id="bmiValue">0</span>
+            </div>
+            <div class="result-text-box">
+              <p id="txt-about-result"></p>
+            </div>
+          </div>
+        </div>
+        <div class="range">
+          <div class="zagalovok">
+            <p>BMI Range</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>BMI Category</th>
+                <th>BMI Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tbody>
+  <tr id="row-under">
+    <th>Underweight</th>
+    <td>Below 18.5</td>
+  </tr>
+  <tr id="row-healthy">
+    <th>Healthy</th>
+    <td>18.5 – 24.9</td>
+  </tr>
+  <tr id="row-over">
+    <th>Overweight</th>
+    <td>25.0 – 29.9</td>
+  </tr>
+  <tr id="row-obese">
+    <th>Obesity</th>
+    <td>30.0 or above</td>
+  </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

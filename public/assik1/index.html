@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BMI calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav_bar">
+        <div class="logo"><a href="../index.html">Main page</a></div>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="result.html">Результат</a></li>
+          <li><a href="#">О нас</a></li>
+        </ul>
+      </nav>
+      <div class="carousel">
+        <img src="img/img2.png" alt="" />
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="infbox">
+        <div class="photo">
+          <img src="img/img3.png" alt="" />
+        </div>
+        <div class="texbox">
+          <div class="texthead">Calculate Your BMI</div>
+          <div class="text">
+            <p>
+              Body mass index (BMI) is a measure of body fat based on height and
+              weight that applies to adult men and women. Your BMI is just one
+              piece of the puzzle. It’s based on height and weight but doesn’t
+              take into account your muscle mass, bone density, or body
+              composition. Your healthcare provider will consider whether your
+              BMI is too high or too low for you.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="calcbox">
+        <div class="calc">
+  <div class="zagalovok">
+    <p>Calculator</p>
+  </div>
+  <form id="froma" action="/send" method="POST">
+    <label>
+      Name: 
+      <input name="name" type="text" placeholder="Введите имя" required />
+    </label>
+    <br>
+
+    <label>
+      Weight: 
+      <input name="weight" type="number" min="0" placeholder="кг" class="small-input"/>
+    </label>
+    <br>
+
+    <label>
+      Height: 
+      <input name="height" type="number" min="0" placeholder="см" class="small-input"/>
+    </label>
+    <br>
+
+
+    <div class="buttons">
+      <button id="btn" type="submit">Отправить</button>
+      <button type="reset" id="resetBtn">Очистить</button>
+    </div>
+  </form>
+</div>
+
+        <div class="range">
+          <div class="zagalovok">
+            <p>BMI Range</p>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>BMI Category</th>
+                <th>BMI Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Underweight</th>
+                <td>Below 18.5</td>
+              </tr>
+              <tr>
+                <th>Healthy</th>
+                <td>18.5 – 24.9</td>
+              </tr>
+              <tr>
+                <th>Overweight</th>
+                <td>25.0 – 29.9</td>
+              </tr>
+              <tr>
+                <th>Obesity</th>
+                <td>30.0 or above</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+    
+  </body>
+</html>

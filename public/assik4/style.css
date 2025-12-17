@@ -1,0 +1,74 @@
+html {
+  background: #a58d77;
+}
+body {
+  background-color: #f8f7f3;
+  border-radius: 40px;
+  padding: 30px;
+  margin: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* -------------------header-------------- */
+nav {
+  position: relative;
+  margin: 20px 200px -10px;
+  z-index: 1000;
+}
+
+.nav_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px 1px rgba(128, 128, 128, 0.264);
+}
+.nav_bar a {
+  display: block;
+  padding: 14px 20px;
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+}
+.nav_bar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+    background-color: #9e8269;
+    border-radius: 30px;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.logo:hover{
+    background-color: #625548;
+    color:#a58d77;
+}
+
+.logo a{
+    color: #f8f7f3;
+}
+
+
+/* ----carusel-------- */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  border-radius: 30px;
+}
+.carousel img {
+  height: 100%;
+  object-fit: cover;
+}
+.carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}

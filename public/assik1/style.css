@@ -1,0 +1,305 @@
+html {
+  background: #a58d77;
+}
+body {
+  background-color: #f8f7f3;
+  border-radius: 40px;
+  padding: 30px;
+  margin: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* -------------------header-------------- */
+nav {
+  position: relative;
+  margin: 20px 200px -10px;
+  z-index: 1000;
+}
+
+.nav_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px 1px rgba(128, 128, 128, 0.264);
+}
+.nav_bar a {
+  display: block;
+  padding: 14px 20px;
+  color: rgb(12, 12, 12);
+  text-decoration: none;
+}
+.nav_bar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+    background-color: #9e8269;
+    border-radius: 30px;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+.logo:hover{
+    background-color: #625548;
+    color:#a58d77;
+}
+
+.logo a{
+    color: #f8f7f3;
+}
+
+
+/* ----carusel-------- */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  border-radius: 30px;
+}
+.carousel img {
+  height: 100%;
+  object-fit: cover;
+}
+.carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+/* -------------main---------- */
+
+.main {
+  margin-top: 20px;
+}
+
+.infbox {
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+}
+
+.photo {
+  background-color: #a28463;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+  border-radius: 70px; 
+}
+
+.photo img {
+  height: 100%;
+  max-width: 103%; 
+  object-fit: contain; 
+}
+
+.texbox {
+  background-color: #a28463;
+  padding: 30px;
+  border-radius: 30px;
+  margin-left: 20px;
+  color: #ffffff;
+}
+.texthead {
+  padding-top: 10px;
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 20px;
+}
+.text {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+/* ------------------calcbox------------ */
+.calcbox {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  padding: 50px 20px;
+  color: white;
+  flex-wrap: wrap; 
+}
+.calc,
+.range {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden; 
+  flex: 1 1 300px; 
+  max-width: 400px;
+}
+
+.zagalovok {
+  padding: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: linear-gradient(135deg, #856b4f, #b99870);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.calc form {
+  padding:20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.calc label {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 500;
+  color: #333;
+}
+
+.calc input {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: 40px;
+}
+
+#resetBtn {
+  padding: 10px;
+  background: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#resetBtn:hover {
+  background: #bbb;
+}
+
+
+#btn {
+  padding: 10px;
+  background: #856b4f;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#btn:hover {
+  background: #b99870;
+}
+
+.range {
+  background-color: #f8f7f7;
+  margin-left: 10px;
+}
+
+.range table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.range th,
+.range td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+}
+
+.range th {
+  color: #333;
+}
+
+.range tbody tr:nth-child(even) {
+  background-color: #f1f0f0;
+  color: #333;
+}
+
+.range tbody tr:hover {
+  background-color: #ddd;
+}
+
+p {
+  margin: 0;
+}
+.range table tr {
+  transition: background-color 0.4s ease;
+}
+
+.range table tr.active-under {
+  background-color: rgba(52, 152, 219, 0.25); /* синий */
+}
+
+.range table tr.active-healthy {
+  background-color: rgba(46, 204, 113, 0.25); /* зелёный */
+}
+
+.range table tr.active-over {
+  background-color: rgba(241, 196, 15, 0.25); /* жёлтый */
+}
+
+.range table tr.active-obese {
+  background-color: rgba(231, 76, 60, 0.25); /* красный */
+}
+
+
+
+/* //-----------------------------------------//results.css///-------------------------- */
+
+.bmi-counter {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 10% 0 0 0;
+  width: 200px;
+  margin: 0 auto;
+  color: rgb(50, 50, 50);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.result-text-box {
+  text-align: center;
+  margin-top: 15px;
+}
+
+#txt-about-result {
+  text-transform: uppercase;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #5e5e5e;
+  opacity: 0; /* изначально скрыт */
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#txt-about-result.show {
+  opacity: 1;
+  transform: translateY(0); 
+}

@@ -1,4 +1,3 @@
-
 fetch("/data")
   .then((res) => res.json())
   .then((data) => {
@@ -17,8 +16,6 @@ fetch("/data")
 
         highlightRow(bmiTarget);
 
-
-        // Показываем текст после окончания анимации
         if (bmiTarget < 18.5) {
           txtResult.textContent = "Underweight";
         } else if (bmiTarget < 25) {
@@ -33,7 +30,6 @@ fetch("/data")
 
       bmiElem.textContent = current.toFixed(1);
 
-      // Меняем цвет цифры по диапазону
       if (current < 18.5) {
         bmiElem.style.color = "#3498db";
       } else if (current < 25) {
@@ -46,9 +42,13 @@ fetch("/data")
     }, speed);
 
     function highlightRow(bmi) {
-      // очищаем старые подсветки
       document.querySelectorAll(".range table tr").forEach((tr) => {
-        tr.classList.remove("active-under", "active-healthy", "active-over", "active-obese");
+        tr.classList.remove(
+          "active-under",
+          "active-healthy",
+          "active-over",
+          "active-obese"
+        );
       });
 
       if (bmi < 18.5) {

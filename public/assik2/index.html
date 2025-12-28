@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Information about...</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -12,137 +14,139 @@
     <header>
       <nav class="nav_bar">
         <div class="logo"><a href="../index.html">Main page</a></div>
-        <!-- <ul>
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="result.html">Результат</a></li>
-          <li><a href="#">О нас</a></li>
-        </ul> -->
       </nav>
       <div class="carousel">
         <img src="img/img3.png" alt="" />
         <div class="carousel-banner">
           <div class="banner-content">
-     
-            <button class="start-here-btn" onclick="scrollToNextBlock()">
-              START HERE
-            </button>
+            <button class="start-here-btn" id="startButton">START HERE</button>
           </div>
         </div>
       </div>
     </header>
 
-  <section class="main-content" id="mainContent">
-    <div class="profile-stage">
-      <!-- Информационные блоки ЗА центральным кругом -->
-      <div class="info-blocks" id="infoBlocks">
-        <div class="info-block top-left" id="blockTopLeft">
-          <div class="block-header">User Information</div>
-          <div class="block-body">
-            <div class="info-line">
-              <span class="info-label">Name:</span>
-              <span class="info-value" id="userName"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">Gender:</span>
-              <span class="info-value" id="userGender"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">Age:</span>
-              <span class="info-value" id="userAge"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">Birthday:</span>
-              <span class="info-value" id="userDob"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">City:</span>
-              <span class="info-value" id="userCity"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">Country:</span>
-              <span class="info-value" id="userCountry"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">Address:</span>
-              <span class="info-value" id="userAddress"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-block top-right" id="blockTopRight">
-          <div class="block-header">Country Details</div>
-          <div class="block-body">
-            <img class="country-flag" id="countryFlag" src="" alt="Flag">
-            <div class="info-line">
-              <span class="info-label">Country:</span>
-              <span class="info-value" id="countryName"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">Capital:</span>
-              <span class="info-value" id="countryCapital"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">Languages:</span>
-              <span class="info-value" id="countryLanguages"></span>
-            </div>
-            <div class="info-line">
-              <span class="info-label">Currency:</span>
-              <span class="info-value" id="countryCurrency"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-block bottom-left" id="blockBottomLeft">
-          <div class="block-header">Exchange Rates</div>
-          <div class="block-body">
-            <div class="rate-box">
-              <span id="rateUSD"></span>
-            </div>
-            <div class="rate-box">
-              <span id="rateKZT"></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-block bottom-right" id="blockBottomRight">
-          <div class="block-header">Latest News</div>
-          <div class="block-body">
-            <div class="news-slider">
-              <button class="news-nav-btn left" id="newsLeftBtn">←</button>
-              <div class="news-display">
-                <img class="news-img" id="newsImg" src="" alt="News">
-                <h4 class="news-heading" id="newsHeading"></h4>
-                <p class="news-text" id="newsText"></p>
-                <a class="news-url" id="newsUrl" href="#" target="_blank">Read more</a>
+    <section class="main-content" id="mainContent">
+      <div class="profile-stage">
+        <!-- Информационные блоки ЗА центральным кругом -->
+        <div class="info-blocks" id="infoBlocks">
+          <div class="info-block top-left" id="blockTopLeft">
+            <div class="block-header">User Information</div>
+            <div class="block-body">
+              <div class="info-line">
+                <span class="info-label">Name:</span>
+                <span class="info-value" id="userName"></span>
               </div>
-              <button class="news-nav-btn right" id="newsRightBtn">→</button>
+              <div class="info-line">
+                <span class="info-label">Gender:</span>
+                <span class="info-value" id="userGender"></span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">Age:</span>
+                <span class="info-value" id="userAge"></span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">Birthday:</span>
+                <span class="info-value" id="userDob"></span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">City:</span>
+                <span class="info-value" id="userCity"></span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">Country:</span>
+                <span class="info-value" id="userCountry"></span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">Address:</span>
+                <span class="info-value" id="userAddress"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block top-right" id="blockTopRight">
+            <div class="block-header">Country Details</div>
+            <div class="block-body">
+              <img class="country-flag" id="countryFlag" src="" alt="Flag" />
+              <div class="info-line">
+                <span class="info-label">Country:</span>
+                <span class="info-value" id="countryName"></span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">Capital:</span>
+                <span class="info-value" id="countryCapital"></span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">Languages:</span>
+                <span class="info-value" id="countryLanguages"></span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">Currency:</span>
+                <span class="info-value" id="countryCurrency"></span>
+              </div>
+            </div>
+          </div>
+          <div class="info-block bottom-right" id="blockBottomRight">
+            <div class="block-header">Exchange Rates</div>
+            <div class="block-body">
+              <div class="rate-box">
+                <span id="rateUSD"></span>
+              </div>
+              <div class="rate-box">
+                <span id="rateKZT"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-block bottom-left" id="blockBottomLeft">
+            <div class="block-header">Latest News</div>
+            <div class="block-body">
+              <div class="news-slider">
+                <button class="news-nav-btn left" id="newsLeftBtn">←</button>
+                <div class="news-display">
+                  <img class="news-img" id="newsImg" src="" alt="News" />
+                  <h4 class="news-heading" id="newsHeading"></h4>
+                  <p class="news-text" id="newsText"></p>
+                  <a class="news-url" id="newsUrl" href="#" target="_blank"
+                    >Read more</a
+                  >
+                </div>
+                <button class="news-nav-btn right" id="newsRightBtn">→</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Центральный круг ПОВЕРХ блоков -->
-      <div class="center-container">
-        <div class="center-circle" id="centerCircle">
-          <div class="play-icon" id="playIcon"></div>
-          <div class="loading-ring hidden" id="loadingRing"></div>
-          <img class="profile-pic hidden" id="profilePic" src="" alt="Profile">
+        <div class="center-container">
+          <div class="center-circle" id="centerCircle">
+            <div class="play-icon" id="playIcon"></div>
+            
+            <div class="loading-ring hidden" id="loadingRing"></div>
+            <img
+              class="profile-pic hidden"
+              id="profilePic"
+              src=""
+              alt="Profile"
+            />
+          </div>
+        </div>
+
+        <!-- Имя под кругом -->
+        <div class="name-badge hidden" id="nameBadge">
+          <span id="fullNameText"></span>
+        </div>
+
+        <!-- Кнопки действий -->
+        <div class="control-buttons hidden" id="controlButtons">
+          <button class="ctrl-btn like" id="likeBtn">Like</button>
+          <button class="ctrl-btn skip" id="skipBtn">Skip</button>
         </div>
       </div>
-
-      <!-- Имя под кругом -->
-      <div class="name-badge hidden" id="nameBadge">
-        <span id="fullNameText"></span>
+      <div class="phon">
       </div>
+      
 
-      <!-- Кнопки действий -->
-      <div class="control-buttons hidden" id="controlButtons">
-        <button class="ctrl-btn like" id="likeBtn">Like</button>
-        <button class="ctrl-btn skip" id="skipBtn">Skip</button>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

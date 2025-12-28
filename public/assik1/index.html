@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI calculator</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -33,7 +35,7 @@
             <p>
               Body mass index (BMI) is a measure of body fat based on height and
               weight that applies to adult men and women. Your BMI is just one
-              piece of the puzzle. It’s based on height and weight but doesn’t
+              piece of the puzzle. It's based on height and weight but doesn't
               take into account your muscle mass, bone density, or body
               composition. Your healthcare provider will consider whether your
               BMI is too high or too low for you.
@@ -44,35 +46,34 @@
 
       <div class="calcbox">
         <div class="calc">
-  <div class="zagalovok">
-    <p>Calculator</p>
-  </div>
-  <form id="froma" action="/send" method="POST">
-    <label>
-      Name: 
-      <input name="name" type="text" placeholder="Введите имя" required />
-    </label>
-    <br>
+          <div class="zagalovok">
+            <p>Calculator</p>
+          </div>
+          <form id="froma" action="/send" method="POST">
+            <label>
+              Name: 
+              <input name="name" type="text" placeholder="Введите имя" required />
+            </label>
+            <br>
 
-    <label>
-      Weight: 
-      <input name="weight" type="number" min="0" placeholder="кг" class="small-input"/>
-    </label>
-    <br>
+            <label>
+              Weight: 
+              <input name="weight" type="number" min="0" step="0.1" placeholder="кг" class="small-input" required />
+            </label>
+            <br>
 
-    <label>
-      Height: 
-      <input name="height" type="number" min="0" placeholder="см" class="small-input"/>
-    </label>
-    <br>
+            <label>
+              Height: 
+              <input name="height" type="number" min="0" step="0.1" placeholder="см" class="small-input" required />
+            </label>
+            <br>
 
-
-    <div class="buttons">
-      <button id="btn" type="submit">Отправить</button>
-      <button type="reset" id="resetBtn">Очистить</button>
-    </div>
-  </form>
-</div>
+            <div class="buttons">
+              <button id="btn" type="submit">Отправить</button>
+              <button type="reset" id="resetBtn">Очистить</button>
+            </div>
+          </form>
+        </div>
 
         <div class="range">
           <div class="zagalovok">

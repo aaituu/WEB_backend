@@ -1,5 +1,6 @@
 html {
   background: #2e4d63;
+  scroll-behavior: smooth;
 }
 body {
   background-color: #f8f7f3;
@@ -8,8 +9,6 @@ body {
   margin: 30px;
   font-family: "Poppins", sans-serif;
 }
-
-
 
 /* -------------------header-------------- */
 nav {
@@ -42,7 +41,7 @@ nav {
 .logo {
   font-size: 20px;
   font-weight: bold;
-  background-color: #FFb162;
+  background-color: #ffb162;
   border-radius: 30px;
   transition: background-color 0.15s ease, transform 0.1s ease;
 }
@@ -63,6 +62,7 @@ nav {
   border-radius: 30px;
 }
 .carousel img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -94,18 +94,6 @@ nav {
   align-items: center;
   gap: 30px;
   pointer-events: auto;
-}
-
-.banner-text {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #8b1a1a;
-  text-align: center;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  line-height: 1.2;
 }
 
 /* START HERE button */
@@ -168,13 +156,13 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 10rem 2rem;
 }
 
 .profile-stage {
   position: relative;
-  width: 1000px;
-  height: 700px;
+  width: 1100px;
+  height: 750px;
 }
 
 /* Info Blocks - ЗА центральным кругом */
@@ -194,82 +182,77 @@ nav {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: center center;
 }
 
-/* Позиции блоков - СКРЫТЫ ЗА ЦЕНТРОМ */
+/* Позиции блоков - СКРЫТЫ В ЦЕНТРЕ */
 .info-block.top-left {
-  top: 0;
-  left: 0;
-  transform: translate(50%, 50%) scale(0);
+  top: -120px;
+  left: 130px;
+  transform: translate(calc(50vw - 50% - 30px), calc(50vh - 50% - 20px))
+    scale(0);
   opacity: 0;
 }
 
 .info-block.top-right {
-  top: 0;
-  right: 0;
-  transform: translate(-50%, 50%) scale(0);
+  top: -50px;
+  right: 50px;
+  transform: translate(calc(-50vw + 50% + 20px), calc(50vh - 50% - 80px))
+    scale(0);
   opacity: 0;
 }
 
 .info-block.bottom-left {
-  bottom: 0;
-  left: 0;
-  transform: translate(50%, -50%) scale(0);
+  bottom: 0px;
+  left: 20px;
+  transform: translate(calc(50vw - 50% - 50px), calc(-50vh + 50% + 60px))
+    scale(0);
   opacity: 0;
 }
 
 .info-block.bottom-right {
-  bottom: 0;
-  right: 0;
-  transform: translate(-50%, -50%) scale(0);
+  bottom: 80px;
+  right: 10px;
+  transform: translate(calc(-50vw + 50% + 40px), calc(-50vh + 50% + 20px))
+    scale(0);
   opacity: 0;
+  max-height: 400px;
 }
 
-/* Блоки ВЫХОДЯТ из центра */
-.info-block.visible.top-left {
-  transform: translate(0, 0) scale(1);
-  opacity: 1;
-}
-
-.info-block.visible.top-right {
-  transform: translate(0, 0) scale(1);
-  opacity: 1;
-}
-
-.info-block.visible.bottom-left {
-  transform: translate(0, 0) scale(1);
-  opacity: 1;
-}
-
-.info-block.visible.bottom-right {
-  transform: translate(0, 0) scale(1);
+/* Блоки ВЫХОДЯТ из центра с эффектом растяжения */
+.info-block.visible {
+  transform: translate(0, 0) scale(1) !important;
   opacity: 1;
 }
 
 /* Блоки УХОДЯТ в центр */
 .info-block.hiding.top-left {
-  transform: translate(50%, 50%) scale(0);
+  transform: translate(calc(50vw - 50% - 30px), calc(50vh - 50% - 20px))
+    scale(0);
   opacity: 0;
 }
 
 .info-block.hiding.top-right {
-  transform: translate(-50%, 50%) scale(0);
+  transform: translate(calc(-50vw + 50% + 20px), calc(50vh - 50% - 80px))
+    scale(0);
   opacity: 0;
 }
 
 .info-block.hiding.bottom-left {
-  transform: translate(50%, -50%) scale(0);
+  transform: translate(calc(50vw - 50% - 50px), calc(-50vh + 50% + 60px))
+    scale(0);
   opacity: 0;
 }
 
 .info-block.hiding.bottom-right {
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(calc(-50vw + 50% + 40px), calc(-50vh + 50% + 20px))
+    scale(0);
   opacity: 0;
 }
 
 .block-header {
-  background: linear-gradient(135deg, #FF6B35, #F7931E);
+  background: linear-gradient(135deg, #ff6b35, #f7931e);
   color: white;
   padding: 1rem 1.5rem;
   font-size: 1rem;
@@ -278,7 +261,7 @@ nav {
 }
 
 .block-body {
-  padding: 1.5rem;
+  padding: 1.3rem;
 }
 
 .info-line {
@@ -317,13 +300,17 @@ nav {
 }
 
 .rate-box {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.1),
+    rgba(247, 147, 30, 0.1)
+  );
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
-  color: #FF6B35;
+  color: #ff6b35;
   margin-bottom: 1rem;
 }
 
@@ -334,17 +321,18 @@ nav {
 /* News */
 .news-slider {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 0.8rem;
+  height: 100%;
 }
 
 .news-nav-btn {
   width: 35px;
   height: 35px;
-  border: 2px solid #FF6B35;
+  border: 2px solid #ff6b35;
   background: white;
   border-radius: 50%;
-  color: #FF6B35;
+  color: #ff6b35;
   font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s;
@@ -352,10 +340,11 @@ nav {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  align-self: center;
 }
 
 .news-nav-btn:hover {
-  background: #FF6B35;
+  background: #ff6b35;
   color: white;
   transform: scale(1.1);
 }
@@ -363,36 +352,55 @@ nav {
 .news-display {
   flex: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  max-height: 320px;
+  overflow: hidden;
 }
 
 .news-img {
   width: 100%;
-  height: 120px;
+  height: 100px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
+  flex-shrink: 0;
 }
 
 .news-heading {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: #333;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  flex-shrink: 0;
 }
 
 .news-text {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #666;
-  margin-bottom: 0.6rem;
-  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  flex: 1;
 }
 
 .news-url {
-  color: #FF6B35;
+  color: #ff6b35;
   font-weight: 600;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: auto;
 }
 
 .news-url:hover {
@@ -409,10 +417,11 @@ nav {
 }
 
 .center-circle {
-  width: 220px;
-  height: 220px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  background: white;
+  border: 10px solid rgba(255, 255, 255, 0.351);
+  background: #ffc0aa;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
@@ -430,24 +439,26 @@ nav {
 .play-icon {
   width: 0;
   height: 0;
-  border-left: 45px solid #FF6B35;
+  border-left: 45px solid #ff6b35;
   border-top: 28px solid transparent;
   border-bottom: 28px solid transparent;
   margin-left: 12px;
 }
 
-/* Кольцо загрузки - ПУСТОЕ В ЦЕНТРЕ */
+/* Кольцо загрузки */
 .loading-ring {
-  width: 80px;
-  height: 80px;
-  border: 6px solid rgba(255, 107, 53, 0.15);
-  border-top: 6px solid #FF6B35;
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(255, 107, 53, 0.15);
+  border-top: 100px solid #fbece8;
   border-radius: 50%;
   animation: rotate 1s linear infinite;
 }
 
 @keyframes rotate {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .profile-pic {
@@ -460,19 +471,21 @@ nav {
   display: none !important;
 }
 
-/* Name Badge */
+/* Name Badge - ПРЯМО ПОД КРУГОМ */
 .name-badge {
   position: absolute;
-  bottom: 120px;
+  top: calc(50% + 130px);
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50;
+  z-index: 101;
   opacity: 0;
   animation: slideUp 0.5s ease 0.5s forwards;
 }
 
 @keyframes slideUp {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 .name-badge.hiding {
@@ -480,14 +493,16 @@ nav {
 }
 
 @keyframes slideDown {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+  }
 }
 
 .name-badge span {
   display: inline-block;
   padding: 0.8rem 2.5rem;
   background: white;
-  color: #FF6B35;
+  color: #ff6b35;
   font-size: 1.2rem;
   font-weight: 600;
   border-radius: 30px;
@@ -497,7 +512,7 @@ nav {
 /* Control Buttons */
 .control-buttons {
   position: absolute;
-  bottom: 30px;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -542,25 +557,25 @@ nav {
 }
 
 .ctrl-btn.like {
-  background: #4CAF50;
+  background: #51b542;
   color: white;
   box-shadow: 0 5px 20px rgba(76, 175, 80, 0.3);
 }
 
 .ctrl-btn.like:hover {
-  background: #45a049;
+  background: #43843a;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
 }
 
 .ctrl-btn.skip {
-  background: #f44336;
+  background: #d83535;
   color: white;
   box-shadow: 0 5px 20px rgba(244, 67, 54, 0.3);
 }
 
 .ctrl-btn.skip:hover {
-  background: #da190b;
+  background: #bc2020;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(244, 67, 54, 0.4);
 }
@@ -591,12 +606,15 @@ nav {
     width: 180px;
     height: 180px;
   }
-
-  .carousel-content h1 {
-    font-size: 2rem;
-  }
-
-  .carousel-content p {
-    font-size: 1rem;
-  }
 }
+
+
+.phon{
+  background-color: #fdb974;
+  width: 1500px;
+  height: 800px;
+  border-radius: 30px;
+  position: absolute;
+}
+
+

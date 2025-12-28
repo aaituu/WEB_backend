@@ -6,7 +6,6 @@ class ProfileExplorer {
     this.isLoading = false;
     
     this.initElements();
-    this.initCarousel();
     this.bindEvents();
   }
 
@@ -27,19 +26,9 @@ class ProfileExplorer {
       blockTopLeft: document.getElementById('blockTopLeft'),
       blockTopRight: document.getElementById('blockTopRight'),
       blockBottomLeft: document.getElementById('blockBottomLeft'),
-      blockBottomRight: document.getElementById('blockBottomRight')
+      blockBottomRight: document.getElementById('blockBottomRight'),
+      mainContent: document.getElementById('mainContent')
     };
-  }
-
-  initCarousel() {
-    const items = document.querySelectorAll('.carousel-item');
-    let currentIndex = 0;
-
-    setInterval(() => {
-      items[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % items.length;
-      items[currentIndex].classList.add('active');
-    }, 4000);
   }
 
   bindEvents() {
@@ -52,8 +41,10 @@ class ProfileExplorer {
   }
 
   scrollToMain() {
-    const mainContent = document.getElementById('mainContent');
-    mainContent.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    this.elements.mainContent.scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'center' 
+    });
   }
 
   handleCircleClick() {
@@ -118,11 +109,19 @@ class ProfileExplorer {
     
     if (news && news.length > 0) {
       this.displayCurrentNews();
+    } else {
+      // Если нет новостей, скрыть кнопки навигации
+      this.elements.newsLeftBtn.style.display = 'none';
+      this.elements.newsRightBtn.style.display = 'none';
+      document.getElementById('newsHeading').textContent = 'No news available';
+      document.getElementById('newsText').textContent = 'Unable to fetch news for this country.';
+      document.getElementById('newsUrl').style.display = 'none';
+      document.getElementById('newsImg').style.display = 'none';
     }
 
     this.elements.fullNameText.textContent = `${user.firstName} ${user.lastName}`;
 
-    // Показать блоки с задержкой
+    // Показать блоки с задержкой и эффектом растяжения
     setTimeout(() => {
       this.showBlocks();
       this.elements.nameBadge.classList.remove('hidden');
@@ -131,11 +130,11 @@ class ProfileExplorer {
   }
 
   showBlocks() {
-    // Блоки выходят из центра по очереди
+    // Блоки выходят из центра по очереди с эффектом растяжения
     setTimeout(() => this.elements.blockTopLeft.classList.add('visible'), 100);
-    setTimeout(() => this.elements.blockTopRight.classList.add('visible'), 200);
-    setTimeout(() => this.elements.blockBottomLeft.classList.add('visible'), 300);
-    setTimeout(() => this.elements.blockBottomRight.classList.add('visible'), 400);
+    setTimeout(() => this.elements.blockTopRight.classList.add('visible'), 250);
+    setTimeout(() => this.elements.blockBottomLeft.classList.add('visible'), 400);
+    setTimeout(() => this.elements.blockBottomRight.classList.add('visible'), 550);
   }
 
   hideBlocks() {
@@ -196,7 +195,14 @@ class ProfileExplorer {
 
     document.getElementById('newsHeading').textContent = article.title;
     document.getElementById('newsText').textContent = article.description;
-    document.getElementById('newsUrl').href = article.url;
+    
+    const newsUrl = document.getElementById('newsUrl');
+    newsUrl.href = article.url;
+    newsUrl.style.display = 'inline';
+    
+    // Показать кнопки навигации
+    this.elements.newsLeftBtn.style.display = 'flex';
+    this.elements.newsRightBtn.style.display = 'flex';
   }
 
   navigateNews(direction) {
@@ -219,7 +225,7 @@ class ProfileExplorer {
     setTimeout(() => {
       this.resetToInitialState();
       this.loadProfile();
-    }, 600);
+    }, 800);
   }
 
   likeProfile() {
@@ -265,3 +271,6 @@ class ProfileExplorer {
 document.addEventListener('DOMContentLoaded', () => {
   new ProfileExplorer();
 });
+
+
+
